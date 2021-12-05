@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faster Pay</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main id="app">
+    <section class="navigation" :class="{'navigation--active': navigationOpen}">
+      <div class="navigation__header">
+        <div class="navigation-header__progress">
+          <svg width="35" height="35" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="17.5" cy="17.5" r="15.5" stroke="#0E0D52" stroke-width="4"/><path d="M17.5 33C26.06 33 33 26.06 33 17.5 33 8.94 26.06 2 17.5 2" stroke="#2AF5D6" stroke-width="4"/></svg>
+        </div>
+        <div class="navigation-header__detail">
+          <span class="navigation-header__step">Step 02</span>
+          <span class="navigation-header__title">Specify Amount</span>
+        </div>
+        <button class="navigation-header__icon" @click="toggleNavigation">
+          <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.657 10 12 15.657 6.343 10" stroke="#2AF5D6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="navigation__body">
+        <ul class="navigation__list">
+          <li class="navigation-list__item">
+            <a href="#" class="navigation-list__item-link">
+              <span class="navigation-list__item-icon">
+                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 2v1.2H9.4V2H16ZM3.4 2v1.2H2V2h1.4ZM16 8.4v1.2H9.4V8.4H16Zm-12.6 0v1.2H2V8.4h1.4ZM16 14.8V16H9.4v-1.2H16Zm-12.6 0V16H2v-1.2h1.4ZM16.9 0H7.4v5.2h9.5c.6 0 1.1-.5 1.1-1.1v-3c0-.6-.5-1.1-1.1-1.1ZM5.4 0H1.1C.5 0 0 .5 0 1.1v3c0 .6.5 1.1 1.1 1.1h4.3V0Zm11.5 6.4H7.4v5.2h9.5c.6 0 1.1-.5 1.1-1.1v-3c0-.6-.5-1.1-1.1-1.1Zm-11.5 0H1.1C.5 6.4 0 6.9 0 7.5v3c0 .6.5 1.1 1.1 1.1h4.3V6.4Zm11.5 6.4H7.4V18h9.5c.6 0 1.1-.5 1.1-1.1v-3c0-.6-.5-1.1-1.1-1.1Zm-11.5 0H1.1c-.6 0-1.1.5-1.1 1.1v3c0 .6.5 1.1 1.1 1.1h4.3v-5.2Z" fill="#CAD5F9"/></svg>
+              </span>
+              <span class="navigation-list__item-title">My Accounts</span>
+            </a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="#" class="navigation-list__item-link">
+              <span class="navigation-list__item-icon">
+                <svg width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.415 14H15.6v-2.2h-3.185V14Zm-2 2H15.6a2 2 0 0 0 2-2V9.8h-7.185V16ZM2 14h3.185v-2.2H2V14Zm-2 0a2 2 0 0 0 2 2h5.185V9.8H0V14Zm12.415-9.8H15.6V2h-3.185v2.2ZM15.6 0h-5.185v6.2H17.6V2a2 2 0 0 0-2-2ZM2 4.2h3.185V2H2v2.2ZM0 2v4.2h7.185V0H2a2 2 0 0 0-2 2Z" fill="#CAD5F9"/></svg>
+              </span>
+              <span class="navigation-list__item-title">Transactions</span>
+            </a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="#" class="navigation-list__item-link">
+              <span class="navigation-list__item-icon">
+                <svg width="20" height="15" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)" fill="#CAD5F9"><path d="M17.3 1.1c-.4-.7-1-1.1-1.6-1.1h-14C.7 0 0 .9 0 2v8.8c0 .9.5 1.7 1.3 1.9V3.3c0-1.2 1-2.2 1.9-2.2h14.1Z"/><path d="M18 2H4c-1 0-1.7.9-1.7 2v1.7h17.6V4c-.2-1.1-1-2-1.9-2ZM2.3 12.9c0 1.1.8 2 1.8 2h14c1 0 1.8-.9 1.8-2V6.7H2.3v6.2Z"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h19.9v14.9H0z"/></clipPath></defs></svg>
+              </span>
+              <span class="navigation-list__item-title">Manage Cards</span>
+            </a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="#" class="navigation-list__item-link">
+              <span class="navigation-list__item-icon">
+                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.8 5c-2.6 0-4.3.8-4.3 1.2 0 .4 1.6 1.2 4.3 1.2v1c-1.6 0-3.3-.3-4.3-.9v1.6c0 .4 1.6 1.3 4.3 1.3v1c-1.6 0-3.3-.3-4.3-.9v1c0 .6 1.7 1.5 4.3 1.5 2.6 0 4.3-.9 4.3-1.5V6.2c0-.4-1.7-1.2-4.3-1.2Z" fill="#CAD5F9"/><path d="M15.7 0H1.9C.8 0 0 .8 0 1.9v13.8c0 1 .8 1.9 1.9 1.9h13.8c1 0 1.9-.8 1.9-1.9V1.9c0-1.1-.8-1.9-1.9-1.9Zm-1.6 11.6c0 1.6-2.7 2.5-5.3 2.5-2.6 0-5.3-.9-5.3-2.5V6.2c0-3 10.5-3 10.5 0v5.4h.1Z" fill="#CAD5F9"/></svg>
+              </span>
+              <span class="navigation-list__item-title">Deposit Money</span>
+            </a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="#" class="navigation-list__item-link">
+              <span class="navigation-list__item-icon">
+                <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.7 0H1.9C.8 0 0 .8 0 1.9v13.8c0 1 .8 1.9 1.9 1.9h13.8c1 0 1.9-.8 1.9-1.9V1.9c0-1.1-.8-1.9-1.9-1.9ZM7.4 4l.8.8-1.4 1.4h6.9v1.2H3.9L7.4 4Zm2.9 9.7-.8-.8 1.4-1.4h-7v-1.2h9.7l-3.3 3.4Z" fill="#CAD5F9"/></svg>
+              </span>
+              <span class="navigation-list__item-title">Convert Money</span>
+            </a>
+          </li>
+          <li class="navigation-list__item">
+            <a href="#" class="navigation-list__item-link">
+              <span class="navigation-list__item-icon">
+                <svg width="18" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.632 14.316V5.158c0-.947-.632-1.58-1.474-1.58H6.105c-.842.001-1.368.738-1.368 1.58v8.947c0 .948.631 1.58 1.474 1.58H18l-1.368-1.37ZM7.789 7.895v-.948h5.895v.948H7.79Zm0 2.21v-.947h5.895v.947H7.79Zm0 2.21v-.947h4v.948h-4ZM5.158 1.58c-1.263 0-2.21 1.053-2.21 2.421v8.105H1.473C.632 12.105 0 11.368 0 10.526V1.58C0 .632.632 0 1.368 0H12.21c.737 0 1.369.737 1.369 1.579H5.158Z" fill="#CAD5F9"/></svg>
+              </span>
+              <span class="navigation-list__item-title">Live Chat</span>
+            </a>
+          </li>
+        </ul>
+        <a href="#" class="navigation__promotion">
+          <span class="navigation-promotion__icon">
+            <svg width="14" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="a" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="16"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0h14v16H0V0Z" fill="#fff"/></mask><g mask="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.725 4.134H5.278c-.196 0-.353.13-.353.29v1.434c0 .142-.131.266-.305.275-.188.01-.347-.113-.347-.265v-3.1C4.273 1.535 5.497.532 7 .532s2.725 1.003 2.725 2.234v1.367ZM6.838 12.9H2.769c-.18 0-.326-.12-.326-.267 0-.147.147-.267.326-.267h4.069c.18 0 .324.12.324.267 0 .147-.145.267-.324.267ZM5.13 14.235H2.77c-.18 0-.327-.12-.327-.268 0-.147.147-.266.326-.266h2.36c.18 0 .327.12.327.266 0 .147-.147.268-.326.268ZM13 5.349c-.073-.693-.77-1.216-1.62-1.216-.194 0-.354.13-.354.29v1.434c0 .143-.13.266-.304.275-.188.011-.345-.113-.345-.265v-3.1C10.378 1.24 8.862-.001 7-.001S3.623 1.241 3.623 2.767v1.366H2.618c-.848 0-1.545.523-1.62 1.216L.006 14.55C-.077 15.327.67 16 1.628 16h10.745c.956 0 1.704-.673 1.621-1.45l-.993-9.201Z" fill="#E0F5FF"/></g></svg>
+          </span>
+          <span class="navigation-promotion__title">Mini Apps</span>
+          <span class="navigation-promotion__tag">PRO</span>
+        </a>
+      </div>
+    </section>
+    <section class="main-content">
+      <div class="container">
+        <div class="widget" v-cloak>
+          <div class="widget__row widget__row--send">
+            <div class="widget__box widget__box--left">
+              <div class="widget__box-inner">
+                <div class="widget__box-content">
+                  <div class="widget__flag">
+                    <img :src="currentSendImageSrc" :alt="sendCurrency" class="widget__flag-image">
+                    <span class="widget__flag-name">{{ sendCurrency }}</span>
+                  </div>
+                  <div class="widget__balance">
+                    <span class="widget__balance-text">{{ currentBalance }}</span>
+                    <span class="widget__balance-subtext">Available</span>
+                  </div>
+                  <div class="widget__icon">
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity=".01" fill="#fff" d="M0 0h24v24H0z"/><path opacity=".01" fill="#fff" d="M0 0h24v24H0z"/><path d="M17.657 10 12 15.657 6.343 10" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+                <select name="currency-send" v-model="sendCurrency" class="widget__select">
+                  <option v-for="currency in currencyList" :value="currency">{{ currency }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="widget__box widget__box--right">
+              <currency-input label="You send" v-model="amountSend" :error-message-prop="errorMessage" @input="handleSendAmountChange"></currency-input>
+            </div>
+          </div>
+          <div class="widget__body">
+            <div class="widget-body__inner">
+              <div class="widget-body__content">
+                <div class="widget-body__item">
+                  <div class="widget-body__item-icon">
+                    <svg width="14" height="14" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity=".01" fill="#fff" d="M0 0h14v14H0z"/><path opacity=".01" fill="#fff" d="M0 0h14v14H0z"/><path d="M4.083 7.292h5.834" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <div class="widget-body__item-text">
+                    <span>{{ fee }}</span> USD fees
+                  </div>
+                </div>
+                <div class="widget-body__item">
+                  <div class="widget-body__item-icon">
+                    <svg width="13" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path opacity=".01" fill="#fff" d="M.989 0h12v12h-12z"/><path opacity=".01" fill="#fff" d="M.989 0h12v12h-12z"/><path d="m9.716 1.32 2.424 2.43-2.424 2.43M11.773 3.75h-4.8M4.23 5.82 1.807 8.25l2.425 2.43M2.174 8.25h4.8" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="a"><path fill="#fff" transform="translate(.99)" d="M0 0h11.968v12H0z"/></clipPath></defs></svg>
+                  </div>
+                  <div class="widget-body__item-text">
+                    <span>{{ currentExchangeRate }} {{ receiveCurrency }}</span> exchange rate
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="widget__row widget__row--receive">
+            <div class="widget__box widget__box--left">
+              <div class="widget__box-inner">
+                <div class="widget__box-content">
+                  <div class="widget__flag">
+                    <img :src="currentReceiveImageSrc" :alt="receiveCurrency" class="widget__flag-image">
+                    <span class="widget__flag-name">{{ receiveCurrency }}</span>
+                  </div>
+                  <div class="widget__icon">
+                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity=".01" fill="#fff" d="M0 0h24v24H0z"/><path opacity=".01" fill="#fff" d="M0 0h24v24H0z"/><path d="M17.657 10 12 15.657 6.343 10" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                </div>
+                <select name="currency-receive" v-model="receiveCurrency" class="widget__select">
+                  <option v-for="currency in currencyList" :value="currency">{{ currency }}</option>
+                </select>
+              </div>
+            </div>
+            <div class="widget__box widget__box--right">
+              <currency-input label="Recipient gets" v-model="amountReceive" @input="handleReceiveAmountChange"></currency-input>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script defer src="js/script.js"></script>
+</body>
+</html>
