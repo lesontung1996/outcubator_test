@@ -26,7 +26,7 @@ Vue.component('currency-input', {
   },
   template: `
     <div class="currency-input" :class="{'currency-input--active': isActive, 'currency-input--error': isInvalid}">
-      <input type="text" class="currency-input__input" :value="value" @input="handleInput" >
+      <input type="text" inputmode="numeric" class="currency-input__input" :value="value" @input="handleInput" >
       <label class="currency-input__label">{{ label }}</label>
       <span class="currency-input__error" v-show="isInvalid">{{ errorMessage }}</span>
     </div>
@@ -65,7 +65,7 @@ var app = new Vue({
       this.navigationOpen = !this.navigationOpen
     },
     getFlagSrc (currencyName) {
-      return `/images/flags/${currencyName}.svg`
+      return `images/flags/${currencyName}.svg`
     },
     handleSendAmountChange (value) {
       if (!value || this.errorMessage || !isFloatNumber(value)) {
